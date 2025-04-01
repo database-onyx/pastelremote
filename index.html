@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PastelRemote - Digital Marketing Agency</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0045a5;
+            --secondary-color: #1e88e5;
+            --accent-color: #00bcd4;
+            --dark-color: #101c3d;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --white-color: #fff;
+
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+        }
+        
+        .dark-bg {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+        }
+        
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .navbar-nav .nav-item {
+            margin: 0 10px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--white-color);
+            font-weight: 500;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+            color: var(--white-color);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            padding: 60px 0;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box {
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-box i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .quote-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white-color);
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .section-heading {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-heading h2 {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-heading h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        .project-card {
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .project-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: var(--white-color);
+        }
+        
+        .tag-seo {
+            background-color: var(--secondary-color);
+        }
+        
+        .tag-ppc {
+            background-color: var(--accent-color);
+        }
+        
+        .tag-social {
+            background-color: #9c27b0;
+        }
+        
+        .service-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background-color: var(--white-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-box .service-icon {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--white-color);
+            font-size: 1.5rem;
+        }
+        
+        .service-box h3 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .awards-section {
+            padding: 80px 0;
+        }
+        
+        .award-logo {
+            height: 80px;
+            margin: 20px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .award-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .case-study-card {
+            margin-bottom: 60px;
+        }
+        
+        .case-study-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-study-content {
+            padding: 30px;
+        }
+        
+        .case-study-content h3 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .case-study-content p {
+            margin-bottom: 20px;
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: var(--white-color);
+        }
+        
+        .footer {
+            padding: 60px 0 20px;
+            background-color: var(--dark-color);
+            color: var(--white-color);
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .footer-links h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white-color);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 991px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .quote-form {
+                margin-top: 40px;
+            }
+            
+            .service-box {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content {
+                padding: 40px 0;
+            }
+            
+            .section-heading h2 {
+                font-size: 1.8rem;
+            }
+            
+            .project-card {
+                margin-bottom: 20px;
+            }
+            
+            .case-study-img {
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .stats-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .testimonial-slider {
+            padding: 40px 0;
+        }
+        
+        .testimonial-item {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        /* Carousel Indicators */
+        .carousel-indicators {
+            position: relative;
+            margin-top: 30px;
+        }
+        
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+        
+        .carousel-indicators .active {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>    
+<body>
+    <!-- Header -->
+    <header class="gradient-bg">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">PastelRemote.AI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#case-studies">Case Studies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-gradient" href="#contact">Request A Quote</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="design-work-container">
+            <style>
+              /* Scoped styles that won't affect the rest of your page */
+              .design-work-container {
+                position: relative;
+                width: 100%;
+                min-height: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                padding: 60px 20px;
+                box-sizing: border-box;
+              }
+          
+              .design-work-container * {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              }
+          
+              .design-work-dots {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-image: radial-gradient(circle, rgba(102, 182, 255, 0.05) 1px, transparent 1px);
+                background-size: 20px 20px;
+                z-index: 1;
+                opacity: 0.5;
+              }
+          
+              .design-work-semi-circle {
+                position: absolute;
+                width: 800px;
+                height: 400px;
+                border-top-left-radius: 400px;
+                border-top-right-radius: 400px;
+                border: 2px solid #3498db;
+                border-bottom: none;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                box-shadow: 
+                    0 0 15px rgba(52, 152, 219, 0.3),
+                    0 0 30px rgba(52, 152, 219, 0.2),
+                    0 0 60px rgba(52, 152, 219, 0.1);
+              }
+          
+              .design-work-content {
+                position: relative;
+                z-index: 3;
+                text-align: center;
+                color: #ffffff;
+                width: 100%;
+                max-width: 500px;
+              }
+          
+              .design-work-content h2 {
+                font-size: 2.8rem;
+                font-weight: 600;
+                margin: 0 0 0.5rem 0;
+                color: #ffffff;
+              }
+          
+              .design-work-content .subtitle {
+                font-size: 2.8rem;
+                font-weight: 600;
+                margin: 0 0 2rem 0;
+                color: #ffffff;
+              }
+          
+              .design-work-content p {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin: 0 auto 2rem auto;
+                max-width: 450px;
+              }
+          
+              .design-work-form {
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-top: 1.5rem;
+              }
+          
+              .design-work-input {
+                padding: 0.75rem 1rem;
+                background-color: #1a1a1a;
+                border: none;
+                border-radius: 4px;
+                color: #ffffff;
+                font-size: 0.9rem;
+                width: 200px;
+              }
+          
+              .design-work-button {
+                padding: 0.75rem 1.5rem;
+                background-color: #3498db;
+                color: #ffffff;
+                border: none;
+                border-radius: 4px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+              }
+          
+              .design-work-button:hover {
+                background-color: #67b6ff;
+                box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+              }
+          
+              @media (max-width: 768px) {
+                .design-work-content h2, 
+                .design-work-content .subtitle {
+                  font-size: 2rem;
+                }
+          
+                .design-work-semi-circle {
+                  width: 120vw;
+                  height: 60vw;
+                  border-top-left-radius: 60vw;
+                  border-top-right-radius: 60vw;
+                }
+                
+                .design-work-form {
+                  flex-direction: column;
+                  align-items: center;
+                }
+                
+                .design-work-input {
+                  width: 100%;
+                  max-width: 300px;
+                }
+              }
+            </style>
+          
+            <div class="design-work-dots"></div>
+            <div class="design-work-semi-circle"></div>
+            <div class="design-work-content">
+              <h2>Design work,</h2>
+              <div class="subtitle">the efficient way</div>
+              <p>Innovative design solutions for technology firms and emerging businesses weary of the typical aesthetic methodology. Arriving shortly.</p>
+              <div class="design-work-form">
+                <input type="email" class="design-work-input" placeholder="johndoe@email.com" aria-label="Email address">
+                <button class="design-work-button">Get notified</button>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            // Isolated script to avoid conflicts
+            (function() {
+              const button = document.querySelector('.design-work-button');
+              const input = document.querySelector('.design-work-input');
+              
+              if (button && input) {
+                button.addEventListener('click', function() {
+                  if (input.value) {
+                    alert('Thank you! We will notify you when we launch.');
+                    input.value = '';
+                  } else {
+                    alert('Please enter your email address.');
+                  }
+                });
+              }
+            })();
+          </script>
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 fade-in">
+                        <div class="hero-content">
+                            <h1>Digital Marketing Agency</h1>
+                            <p>Your trusted partner for strategic digital marketing solutions to increase brand awareness, lead generation & conversions.</p>
+                            
+                            <div class="feature-box">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Precisely Targeted Audiences</span>
+                            </div>
+                            
+                            <div class="feature-box">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Generate Qualified Leads</span>
+                            </div>
+                            
+                            <div class="feature-box">
+                                <i class="fas fa-trophy"></i>
+                                <span>Brand-Based Authority</span>
+                            </div>
+                            
+                            <div class="d-flex mt-4">
+                                <div class="me-4">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>5 Star Exceptional Service</p>
+                                </div>
+                                <div>
+                                    <div class="rating">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <p>2024 Agency of the Year</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 fade-in">
+                        <div class="quote-form">
+                            <h3 class="mb-4">Request a Quote</h3>
+                            <p class="mb-4">Maximize Your Brand's Performance With Digital Marketing Solutions</p>
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Name*" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Company Name*" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email*" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Phone*" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Message*" required>
+                                </div>
+                                <button type="submit" class="btn btn-gradient w-100">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Featured Projects Section -->
+    <section class="py-5" id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Featured Marketing Projects</h2>
+                <p>See Our Marketing Results</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 fade-in">
+                    <div class="project-card">
+                        <img src="public/images/campigns_right.jpg" alt="Project Image" class="img-fluid">
+                        <div class="project-content dark-bg">
+                            <h3>Strategic SEO Content Development</h3>
+                            <p>Developed SEO and content enhancement for a law firm clients of local & international jurisdictions.</p>
+                            <div class="mb-3">
+                                <span class="project-tag tag-seo">SEO</span>
+                                <span class="project-tag tag-ppc">Content Strategy</span>
+                            </div>
+                            <p>Results:</p>
+                            <ul>
+                                <li>45% increase in organic traffic</li>
+                                <li>Ranked 1st for primary high-value target</li>
+                                <li>Increased CTR by 32%</li>
+                            </ul>
+                            <a href="#" class="btn btn-gradient">REQUEST A QUOTE</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 fade-in">
+                    <div class="project-card">
+                        <img src="public/images/planning.jpg" alt="Project Image" class="img-fluid">
+                        <div class="project-content dark-bg">
+                            <h3>Multi-Channel Marketing Campaign</h3>
+                            <p>Developed integrated campaign across social media, email, and PPC channels for a retail client.</p>
+                            <div class="mb-3">
+                                <span class="project-tag tag-social">Social Media</span>
+                                <span class="project-tag tag-ppc">PPC</span>
+                            </div>
+                            <p>Results:</p>
+                            <ul>
+                                <li>235% increase in conversion rate</li>
+                                <li>Reduced Cost-Per-Acquisition by 45%</li>
+                                <li>Increased ROI by 187%</li>
+                            </ul>
+                            <a href="#" class="btn btn-gradient">REQUEST A QUOTE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light" id="services">
+        <div class="container">
+            <h2 class="text-center mb-4">Digital Marketing Services</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 bg-light">
+                        <div class="text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-chart-pie fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Digital Marketing Strategy</h5>
+                            <p class="card-text small text-muted">Comprehensive, data-driven strategies</p>
+                            <p class="price mt-2">Explore this ></p>
+                            <div class="color-options mt-3">
+                                <span class="dot bg-dark"></span>
+                                <span class="dot bg-secondary"></span>
+                                <span class="dot bg-primary"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 bg-light">
+                        <div class="text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-search fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Search Engine Optimization</h5>
+                            <p class="card-text small text-muted">Boost your organic visibility</p>
+                            <p class="price mt-2">Explore this ></p>
+                            <div class="color-options mt-3">
+                                <span class="dot bg-dark"></span>
+                                <span class="dot bg-light border"></span>
+                                <span class="dot bg-danger"></span>
+                                <span class="dot bg-info"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 bg-light">
+                        <div class="text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-ad fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">PPC & Social Media</h5>
+                            <p class="card-text small text-muted">Maximize ROI with targeted campaigns</p>
+                            <p class="price mt-2">Explore this ></p>
+                            <div class="color-options mt-3">
+                                <span class="dot bg-dark"></span>
+                                <span class="dot bg-danger"></span>
+                                <span class="dot bg-warning"></span>
+                                <span class="dot bg-light border"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="text-decoration-none">Explore all Services ›</a>
+            </div>
+        </div>
+        
+        <style>
+            .dot {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                margin: 0 3px;
+            }
+            .price {
+                font-weight: 500;
+            }
+            .card {
+                transition: transform 0.3s;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+            }
+        </style>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section dark-bg" id="awards">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Recognized Digital Marketing Agency Experts</h2>
+                <p>Our Experts Have Won Top Industry Awards</p>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <img src="/api/placeholder/160/80" alt="Award Logo" class="award-logo">
+                    <h4>AWARDS</h4>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <img src="/api/placeholder/160/80" alt="Award Logo" class="award-logo">
+                    <h4>RECOGNITION</h4>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <img src="/api/placeholder/160/80" alt="Award Logo" class="award-logo">
+                    <h4>EXPERTISE</h4>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <img src="/api/placeholder/160/80" alt="Award Logo" class="award-logo">
+                    <h4>PARTNERSHIP</h4>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Here are some of our clients</h2>
+            
+            <div class="row">
+                <!-- First row of logos -->
+                <div class="col-md-4 mb-4">
+                    <div class="client-box bg-light p-4 d-flex align-items-center justify-content-center">
+                        <img src="public/images/logo/Decathlon_Logo.png" alt="Decathlon" class="client-logo">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="client-box bg-light p-4 d-flex align-items-center justify-content-center">
+                        <img src="public/images/logo/ganga.png" alt="Ganga" class="client-logo">
+                    </div>
+                </div>
+
+                
+                <div class="col-md-4 mb-4">
+                    <div class="client-box bg-light p-4 d-flex align-items-center justify-content-center">
+                        <img src="public/images/logo/vertpak.png" alt="Vertpak" class="client-logo">
+                    </div>
+                </div>
+                
+                <!-- Second row of logos -->
+                <div class="col-md-4 mb-4">
+                    <div class="client-box bg-light p-4 d-flex align-items-center justify-content-center">
+                        <img src="public/images/logo/yercaud_hills_ultra.png" alt="Yercaud Hills Ultra" class="client-logo">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="client-box bg-light p-4 d-flex align-items-center justify-content-center">
+                        <img src="public/images/logo/tamil_events.png" alt="Tamil Events" class="client-logo">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="client-box bg-light p-4 d-flex align-items-center justify-content-center">
+                        <img src="public/images/logo/modern_madras.png" alt="Modern Madras" class="client-logo">
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        
+        <style>
+            .client-box {
+                height: 150px;
+                border-radius: 0;
+                overflow: hidden;
+            }
+            
+            .client-logo {
+                max-width: 80%;
+                max-height: 80%;
+                object-fit: contain;
+                filter: grayscale(100%);
+                opacity: 0.8;
+                transition: all 0.3s ease;
+            }
+            
+            .client-box:hover .client-logo {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+            
+            .bg-light {
+                background-color: #f2f2f2 !important;
+            }
+        </style>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="py-5" id="case-studies">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Featured Digital Marketing Case Studies</h2>
+                <p>Explore some of our recent digital marketing campaigns for clients across industries</p>
+            </div>
+            
+            <div class="row case-study-card">
+                <div class="col-lg-6 fade-in">
+                    <div class="case-study-img">
+                        <img src="public/images/case_study.jpg" alt="Case Study Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="case-study-content">
+                        <h3>Accelerating Growth Through Strategic Affiliate Marketing</h3>
+                        <p>We helped a fintech startup to amplify lead and revenue streams by building strategic affiliate marketing networks.</p>
+                        <p>The tailored affiliate strategy focused on optimal positioning, segmenting and targeting specific partners to drive qualified traffic from trusted sources. The campaign delivered exceptional results with a 250% increase in conversions within the following year.</p>
+                        <div class="d-flex mt-4">
+                            <a href="#" class="btn btn-outline">LAUNCH WEBSITE</a>
+                            <a href="#" class="btn btn-gradient">REQUEST A QUOTE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row case-study-card">
+                <div class="col-lg-6 order-lg-2 fade-in">
+                    <div class="case-study-img">
+                        <img src="public/images/campigns.jpg" alt="Case Study Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 fade-in">
+                    <div class="case-study-content">
+                        <h3>Boosting Conversions With Strategic Marketing</h3>
+                        <p>To accelerate digital growth in online visibility, lead quality and conversion rates, we developed a comprehensive multi-channel strategy focusing on SEO, PPC, and social media.</p>
+                        <p>This approach led to a 135% increase in organic traffic over 18 months and a 57% rise in conversions. The ROI posted across all channels showed an average return of 780% on marketing investment.</p>
+                        <div class="d-flex mt-4">
+                            <a href="#" class="btn btn-outline">LAUNCH WEBSITE</a>
+                            <a href="#" class="btn btn-gradient">REQUEST A QUOTE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row case-study-card">
+                <div class="col-lg-6 fade-in">
+                    <div class="case-study-img">
+                        <img src="public/images/case_study_1.jpg" alt="Case Study Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="case-study-content">
+                        <h3>Multi-Channel Paid Advertising To Improve Market Visibility</h3>
+                        <p>Online B2B needed to expand its market reach and generate more leads through a strategic paid advertising campaign.</p>
+                        <p>Multi-channel approach across Google Ads, LinkedIn Ads, and retargeting campaigns delivered a 95% increase in qualified leads and 120% ROI. Conversion tracking tools allowed us to optimize campaigns in real-time for maximum results.</p>
+                        <div class="d-flex mt-4">
+                            <a href="#" class="btn btn-outline">LAUNCH WEBSITE</a>
+                            <a href="#" class="btn btn-gradient">REQUEST A QUOTE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row case-study-card">
+                <div class="col-lg-6 order-lg-2 fade-in">
+                    <div class="case-study-img">
+                        <img src="public/images/feild-marketing.png" alt="Case Study Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 fade-in">
+                    <div class="case-study-content">
+                        <h3>Boosting Conversions With Strategic Field Marketing</h3>
+                        <p>To drive growth in brand awareness, lead quality, and conversion rates through direct engagement, we implemented a comprehensive field marketing strategy focusing on targeted outreach, in-person promotions, and experiential marketing.</p>
+                        <p>This hands-on approach resulted in a 135% increase in qualified leads over 18 months and a 57% rise in conversions. The ROI across all offline campaigns demonstrated an average return of 780% on marketing investment.</p>
+                        <div class="d-flex mt-4">
+                            <a href="#" class="btn btn-outline">LAUNCH WEBSITE</a>
+                            <a href="#" class="btn btn-gradient">REQUEST A QUOTE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row case-study-card">
+                <div class="col-lg-6  fade-in">
+                    <div class="case-study-img">
+                        <img src="public/images/r&d.jpg" alt="Research & Development Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6  fade-in">
+                    <div class="case-study-content">
+                        <h3>Innovating Through Research & Development</h3>
+                        <p>Our R&D team is dedicated to pioneering cutting-edge solutions that drive technological advancements. We focus on deep research, prototyping, and continuous improvement to push the boundaries of innovation.</p>
+                        <p>With a strategic approach, we have achieved groundbreaking results in AI-driven automation, data analytics, and product development, enhancing efficiency and scalability across industries.</p>
+                        <div class="d-flex mt-4">
+                            <a href="#" class="btn btn-outline">EXPLORE PROJECTS</a>
+                            <a href="#" class="btn btn-gradient">JOIN OUR R&D INITIATIVE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="testimonial-icon mb-3">
+                        <i class="fas fa-quote-right fa-2x"></i>
+                    </div>
+                    <h2>Our People Are Saying</h2>
+                    
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">
+                                        "PastelRemote transformed our digital presence. Their strategic approach to SEO and content marketing doubled our organic traffic in just 6 months."
+                                    </p>
+                                    <div class="profile-images mt-5 mb-3">
+                                        <div class="profile-image-group">
+                                            <img src="/api/placeholder/60/60" alt="Client 1" class="rounded-circle profile-img active">
+                                            <img src="/api/placeholder/60/60" alt="Client 2" class="rounded-circle profile-img">
+                                            <img src="/api/placeholder/60/60" alt="Client 3" class="rounded-circle profile-img">
+                                        </div>
+                                    </div>
+                                    <h5 class="client-name">Sarah Johnson</h5>
+                                    <p class="client-position">Marketing Director, TechSolutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">
+                                        "The PPC campaigns developed by PastelRemote reduced our cost per acquisition by 40% while increasing our conversion rates significantly."
+                                    </p>
+                                    <div class="profile-images mt-5 mb-3">
+                                        <div class="profile-image-group">
+                                            <img src="/api/placeholder/60/60" alt="Client 1" class="rounded-circle profile-img">
+                                            <img src="/api/placeholder/60/60" alt="Client 2" class="rounded-circle profile-img active">
+                                            <img src="/api/placeholder/60/60" alt="Client 3" class="rounded-circle profile-img">
+                                        </div>
+                                    </div>
+                                    <h5 class="client-name">Michael Rodriguez</h5>
+                                    <p class="client-position">CEO, Growth Enterprises</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">
+                                        "Their holistic approach to digital marketing has been a game-changer for our brand. We've seen a 300% ROI on our marketing spend."
+                                    </p>
+                                    <div class="profile-images mt-5 mb-3">
+                                        <div class="profile-image-group">
+                                            <img src="/api/placeholder/60/60" alt="Client 1" class="rounded-circle profile-img">
+                                            <img src="/api/placeholder/60/60" alt="Client 2" class="rounded-circle profile-img">
+                                            <img src="/api/placeholder/60/60" alt="Client 3" class="rounded-circle profile-img active">
+                                        </div>
+                                    </div>
+                                    <h5 class="client-name">Amanda Chen</h5>
+                                    <p class="client-position">Founder, StyleHub</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">
+                                        "Working with PastelRemote has been a revelation. Their email marketing campaigns have consistently delivered a 25% open rate and 12% click-through rate."
+                                    </p>
+                                    <div class="profile-images mt-5 mb-3">
+                                        <div class="profile-image-group">
+                                            <img src="/api/placeholder/60/60" alt="Client 4" class="rounded-circle profile-img active">
+                                            <img src="/api/placeholder/60/60" alt="Client 5" class="rounded-circle profile-img">
+                                            <img src="/api/placeholder/60/60" alt="Client 6" class="rounded-circle profile-img">
+                                        </div>
+                                    </div>
+                                    <h5 class="client-name">David Thompson</h5>
+                                    <p class="client-position">Marketing Manager, Retail Group</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-controls mt-4">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            .testimonials-section {
+                background: linear-gradient(135deg, #f9f0ff 0%, #ffe2e6 100%);
+                padding: 80px 0;
+            }
+            
+            .testimonial-icon {
+                color: #8a3cff;
+            }
+            
+            h2 {
+                margin-bottom: 40px;
+                font-weight: 600;
+            }
+            
+            .testimonial-text {
+                font-size: 1.25rem;
+                line-height: 1.8;
+                color: #555;
+                max-width: 750px;
+                margin: 0 auto;
+            }
+            
+            .profile-images {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .profile-image-group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .profile-img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                margin: 0 5px;
+                border: 2px solid transparent;
+                opacity: 0.5;
+                transition: all 0.3s ease;
+            }
+            
+            .profile-img.active {
+                width: 60px;
+                height: 60px;
+                opacity: 1;
+                border: 2px solid #8a3cff;
+            }
+            
+            .client-name {
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            
+            .client-position {
+                color: #777;
+                font-size: 0.9rem;
+            }
+            
+            .carousel-controls {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .carousel-control-prev, .carousel-control-next {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(138, 60, 255, 0.1);
+                border-radius: 50%;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .carousel-control-prev-icon, .carousel-control-next-icon {
+                background-color: #8a3cff;
+                border-radius: 50%;
+                padding: 10px;
+            }
+        </style>
+    </section> -->
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="stats-counter">250+</div>
+                    <p class="stats-text text-success">Projects Completed</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="stats-counter">98%</div>
+                    <p class="stats-text  text-success">Client Satisfaction</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="stats-counter">15+</div>
+                    <p class="stats-text text-success">Industry Awards</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="stats-counter">500%</div>
+                    <p class="stats-text text-success">Average ROI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 gradient-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-center text-lg-start fade-in">
+                    <h2>Ready to Elevate Your Digital Marketing?</h2>
+                    <p>Let's work together to boost your online presence and drive results.</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end fade-in">
+                    <a href="#" class="btn btn-light btn-lg">Get Started Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">PastelRemote</div>
+                    <p>Your trusted partner for comprehensive digital marketing solutions that drive real business results.</p>
+                    <div class="footer-social mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#case-studies">Case Studies</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#">SEO Optimization</a></li>
+                            <li><a href="#">Content Marketing</a></li>
+                            <li><a href="#">PPC Management</a></li>
+                            <li><a href="#">Social Media Marketing</a></li>
+                            <li><a href="#">Email Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i>PastelFrames,Nethimedu,Salem-636002</li>
+                            <li><i class="fas fa-phone me-2"></i>+91 7708196973 </li>
+                            <li><i class="fas fa-phone me-2"></i>+91 6384638463 </li>
+                            <li><i class="fas fa-envelope me-2"></i> support@PastelRemoteai.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PastelRemote. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in animation to elements
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.8)';
+                    navbar.style.padding = '10px 0';
+                } else {
+                    navbar.style.background = 'transparent';
+                    navbar.style.padding = '15px 0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

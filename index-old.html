@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Digital Marketing Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a2b66;
+            --secondary-blue: #2a4494;
+            --primary-yellow: #f5b400;
+            --secondary-yellow: #ffc529;
+            --dark-gray: #333333;
+            --light-gray: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-gray);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .navbar .btn-contact {
+            background-color: var(--primary-yellow);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar .btn-contact:hover {
+            background-color: var(--secondary-yellow);
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-yellow);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 70px;
+            background-color: var(--primary-yellow);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-section {
+            padding: 100px 0;
+        }
+        
+        .about-content {
+            padding-left: 30px;
+        }
+        
+        .about-content h3 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-card .icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .service-card .icon i {
+            font-size: 30px;
+            color: white;
+        }
+        
+        .service-card h4 {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .lead-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .lead-form h3 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .lead-form .form-control {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .lead-form .btn-submit {
+            background-color: var(--primary-yellow);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .lead-form .btn-submit:hover {
+            background-color: var(--secondary-yellow);
+        }
+        
+        .client-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .client-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .portfolio-section {
+            padding: 100px 0;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 43, 102, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h5 {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .testimonial-section {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 30px 15px;
+        }
+        
+        .testimonial-card .quote {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-card .client-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-card .client-pic {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-card .client-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-card .client-details h5 {
+            margin-bottom: 5px;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        .testimonial-card .client-details p {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer h5 {
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .footer p, .footer a {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+        }
+        
+        .footer a:hover {
+            color: var(--primary-yellow);
+            text-decoration: none;
+        }
+        
+        .footer .social-links {
+            margin-top: 20px;
+        }
+        
+        .footer .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer .social-links a:hover {
+            background-color: var(--primary-yellow);
+        }
+        
+        .footer .social-links a i {
+            color: white;
+            font-size: 18px;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 15px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                padding-left: 0;
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-section {
+                height: 70vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .lead-form {
+                margin-top: 50px;
+            }
+        }
+        
+        /* Special Features */
+        .animated-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .feature-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--primary-yellow);
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-box .icon {
+            font-size: 40px;
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+        }
+        
+        .feature-box h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Specialized Services */
+        .services-section {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .process-step .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-yellow);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .process-step .step-content h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/api/placeholder/160/50" alt="Elite Digital Marketing">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-contact ms-3">Get A Quote</button>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 hero-content">
+                        <h1>Best Digital Marketing Agency in Your City</h1>
+                        <p>We're the leading digital marketing company focused on delivering ROI through SEO, social media, web development, and digital advertising solutions to grow your business.</p>
+                        <a href="#contact" class="btn btn-primary">Get Qualified Leads</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Your Premier Digital Marketing Agency</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="/api/placeholder/600/450" alt="About Us" class="img-fluid rounded">
+                    </div>
+                    <div class="col-lg-6 about-content">
+                        <h3>Transform Your Digital Landscape</h3>
+                        <p>Elite Digital Agency is your trusted digital marketing partner in the region. We work closely with businesses to create high-performing digital strategies that deliver tangible results with data-driven marketing campaigns and innovative strategies. Our team is redefining the way businesses connect with their customers.</p>
+                        <p>Our expertise spans digital marketing, content marketing, SEO, social media marketing, PPC, creative marketing, web hosting, responsive website design, and e-commerce development.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-4 text-center">
+                                <div class="animated-number">7+</div>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="animated-number">200+</div>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="animated-number">95%</div>
+                                <p>Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Specialized Digital Marketing Services</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>SEO</h4>
+                            <p>We are one of the top SEO companies in the region. Our proven SEO techniques deliver a steady stream of qualified traffic to your website.</p>
+                            <a href="#" class="btn btn-sm btn-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>GBP Local SEO</h4>
+                            <p>At Dynamic Agency, we understand the importance of local SEO and Google Business Profile (GBP) to capture local customers.</p>
+                            <a href="#" class="btn btn-sm btn-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon">
+                                <i class="fas fa-hashtag"></i>
+                            </div>
+                            <h4>Social Media Marketing</h4>
+                            <p>Our expertise in social media marketing campaigns enables businesses to build brand awareness and engage with your audience.</p>
+                            <a href="#" class="btn btn-sm btn-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <h4>Pay Per Click Advertising (PPC)</h4>
+                            <p>As a reputable digital marketing agency in the city, we excel at delivering successful PPC campaigns that drive qualified traffic and conversions.</p>
+                            <a href="#" class="btn btn-sm btn-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Website Development</h4>
+                            <p>Modern, user-friendly websites with our creative "Website Design agency" that implement best practices for optimal user experience.</p>
+                            <a href="#" class="btn btn-sm btn-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>E-commerce Development</h4>
+                            <p>Transform your online business with our E-commerce Development Services. We can create custom, secure, and user-friendly online stores.</p>
+                            <a href="#" class="btn btn-sm btn-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Digital Marketing Agency in Your City That Drives Tangible Results</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Best Consulting</h4>
+                                <p>We take pride in offering expert digital strategy consultation to understand your business and create targeted marketing plans.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Market Research</h4>
+                                <p>Our expert team conducts thorough market research to identify your competition and consumer behavior. We understand the dynamics of your market.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Business Growth</h4>
+                                <p>Strategic agency driving data-backed strategies for sustainable business growth through digital marketing solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/api/placeholder/600/450" alt="Our Process" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Client Section -->
+        <section class="client-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Clients We've Worked With</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <img src="/api/placeholder/150/80" alt="Client 1" class="img-fluid client-logo">
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <img src="/api/placeholder/150/80" alt="Client 2" class="img-fluid client-logo">
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <img src="/api/placeholder/150/80" alt="Client 3" class="img-fluid client-logo">
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <img src="/api/placeholder/150/80" alt="Client 4" class="img-fluid client-logo">
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <img src="/api/placeholder/150/80" alt="Client 5" class="img-fluid client-logo">
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <img src="/api/placeholder/150/80" alt="Client 6" class="img-fluid client-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Portfolio Section -->
+        <section class="portfolio-section" id="portfolio">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Featured Projects</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <img src="/api/placeholder/400/300" alt="Project 1" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <h5>E-commerce Website</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <img src="/api/placeholder/400/300" alt="Project 2" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <h5>SEO Campaign</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <img src="/api/placeholder/400/300" alt="Project 3" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <h5>Social Media Marketing</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <img src="/api/placeholder/400/300" alt="Project 4" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <h5>PPC Campaign</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <img src="/api/placeholder/400/300" alt="Project 5" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <h5>Corporate Website</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <img src="/api/placeholder/400/300" alt="Project 6" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <h5>Brand Identity</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Testimonial Section -->
+        <section class="testimonial-section" id="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Our Clients Say</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="quote">
+                                "Their expertise in digital marketing transformed our online presence completely. We saw a 200% increase in qualified leads within just 3 months!"
+                            </div>
+                            <div class="client-info">
+                                <div class="client-pic">
+                                    <img src="/api/placeholder/100/100" alt="Client">
+                                </div>
+                                <div class="client-details">
+                                    <h5>John Smith</h5>
+                                    <p>CEO, Tech Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="quote">
+                                "The SEO strategy they implemented helped us rank on the first page for our key terms. Our organic traffic has increased by 150% in just 6 months."
+                            </div>
+                            <div class="client-info">
+                                <div class="client-pic">
+                                    <img src="/api/placeholder/100/100" alt="Client">
+                                </div>
+                                <div class="client-details">
+                                    <h5>Sarah Johnson</h5>
+                                    <p>Marketing Director, Retail Chain</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="quote">
+                                "Their team redesigned our website and implemented a comprehensive digital strategy that resulted in a 70% increase in conversions. Highly recommended!"
+                            </div>
+                            <div class="client-info">
+                                <div class="client-pic">
+                                    <img src="/api/placeholder/100/100" alt="Client">
+                                </div>
+                                <div class="client-details">
+                                    <h5>Michael Brown</h5>
+                                    <p>Founder, StartUp Inc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Ready to Grow Your Business?</h2>
+                        <p class="mb-4">Let's discuss how our digital marketing strategies can help your business reach new heights.</p>
+                        <div class="feature-box mb-4">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt me-3" style="color: var(--primary-yellow); font-size: 24px;"></i>
+                                <div>
+                                    <div>
+                                        <h5 class="mb-0">Our Location</h5>
+                                        <p class="mb-0">123 Business Avenue, Your City</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-box mb-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-phone-alt me-3" style="color: var(--primary-yellow); font-size: 24px;"></i>
+                                    <div>
+                                        <h5 class="mb-0">Call Us</h5>
+                                        <p class="mb-0">+1 (123) 456-7890</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-box mb-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope me-3" style="color: var(--primary-yellow); font-size: 24px;"></i>
+                                    <div>
+                                        <h5 class="mb-0">Email Us</h5>
+                                        <p class="mb-0">info@elitedigital.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social-links mt-4">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="lead-form">
+                                <h3>Do You Want Qualified Leads?</h3>
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="tel" class="form-control" placeholder="Phone">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="terms">
+                                        <label class="form-check-label" for="terms">I'm not a robot</label>
+                                    </div>
+                                    <button type="submit" class="btn-submit">GET IN TOUCH</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <img src="/api/placeholder/200/60" alt="Elite Digital Marketing" class="mb-4">
+                            <p>We are a leading digital marketing agency specializing in creating data-driven strategies that deliver real business growth and outstanding ROI for our clients.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                            <h5>Quick Links</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#portfolio">Portfolio</a></li>
+                                <li><a href="#testimonials">Testimonials</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-4 mb-4">
+                            <h5>Our Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">SEO & Local SEO</a></li>
+                                <li><a href="#">Social Media Marketing</a></li>
+                                <li><a href="#">PPC Advertising</a></li>
+                                <li><a href="#">Website Development</a></li>
+                                <li><a href="#">E-commerce Solutions</a></li>
+                                <li><a href="#">Content Marketing</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-4 mb-4">
+                            <h5>Subscribe</h5>
+                            <p>Subscribe to our newsletter to get the latest updates.</p>
+                            <form class="mt-3">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email">
+                                    <button class="btn" type="button" style="background-color: var(--primary-yellow); color: white;">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <p>© 2025 Elite Digital Marketing. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        
+            <!-- Scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+            <script>
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            window.scrollTo({
+                                top: target.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+                
+                // Navbar background change on scroll
+                window.addEventListener('scroll', function() {
+                    const navbar = document.querySelector('.navbar');
+                    if (window.scrollY > 50) {
+                        navbar.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                    } else {
+                        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    }
+                });
+                
+                // Number counter animation
+                const animatedNumbers = document.querySelectorAll('.animated-number');
+                
+                const animateNumber = (element, target) => {
+                    let current = 0;
+                    const increment = target > 100 ? Math.ceil(target / 100) : 1;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        element.textContent = current + (element.textContent.indexOf('%') !== -1 ? '%' : '+');
+                        if (current >= target) {
+                            element.textContent = target + (element.textContent.indexOf('%') !== -1 ? '%' : '+');
+                            clearInterval(timer);
+                        }
+                    }, 20);
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const target = parseInt(entry.target.textContent);
+                            animateNumber(entry.target, target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                animatedNumbers.forEach(number => {
+                    observer.observe(number);
+                });
+            </script>
+        </body>
+        </html>
