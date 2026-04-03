@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const textToEncode = `Hi Pastel Remote AI,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
             const waText = encodeURIComponent(textToEncode);
             
-            const waUrl = `https://wa.me/918681916356?text=${waText}`;
+            const waUrl = `https://wa.me/916384638463?text=${waText}`;
             window.open(waUrl, '_blank');
         });
     }
