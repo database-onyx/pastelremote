@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing | Pastel Remote AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Pastel Remote AI</a></div>
+        <div class="nav-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh;">
+        <div class="glow-blob"></div>
+        <div class="hero-content">
+            <div class="icon" style="color: var(--accent); margin-bottom: 2rem;">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <h1 class="hero-title" style="font-size: 4rem;">Digital Marketing.</h1>
+            <p class="hero-subtitle">Data-driven strategies designed to scale rapidly.</p>
+        </div>
+    </section>
+
+    <section class="about" style="padding-top: 60px; padding-bottom: 140px;">
+        <div class="section-container" style="display: flex; gap: 80px; flex-wrap: wrap;">
+            <div class="about-content hidden-reveal" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem; font-size: 2.5rem;">Precision & Performance</h2>
+                <p class="about-text">We don't just generate traffic; we orchestrate holistic digital environments that engage and convert. Through sophisticated content strategies, precise SEO optimization, and hyper-targeted advertising, Pastel Remote AI's marketing teams elevate your brand presence elegantly. We map out a transparent architecture for your digital growth, leveraging advanced analytics every step of the way.</p>
+                
+                <div class="about-features" style="margin-top: 2.5rem;">
+                    <div class="feature-item">
+                        <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Performance Marketing & Paid Ads
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Advanced SEO & Content Strategy
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Deep Analytical Reporting
+                    </div>
+                </div>
+                
+                <button class="cta-button trigger-modal" data-target="#dm-case-modal" style="margin-top: 3rem;">View Case Studies</button>
+            </div>
+            <div class="about-image hidden-reveal" style="background-image: url('dm_image.png'); flex: 1; min-width: 300px;"></div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="dm-case-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Digital Marketing Cases</h2>
+            <div class="case-study-item">
+                <h3>Tour & Travel Industry Scaling</h3>
+                <p><strong>The Challenge:</strong> Multiple specialized tour companies were struggling with low conversion rates despite offering excellent targeted domestic and international travel packages.</p>
+                <p><strong>The Solution:</strong> Executed highly optimized, data-driven digital marketing campaigns across key social and search channels, coupled with precise retargeting strategies to capture high-intent visual travelers.</p>
+                <p><strong>Result:</strong> Exponentially enhanced the volume of direct customer walk-ins and generated a continuous massive surge in high-quality digital enquiries.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Pastel Remote AI. Shaping the future of business.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
