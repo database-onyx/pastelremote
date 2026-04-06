@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrapreneurship Consultancy | Pastel Remote AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Pastel Remote AI</a></div>
+        <div class="nav-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh;">
+        <div class="glow-blob"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: 4rem;">Intrapreneurship Consultancy.</h1>
+            <p class="hero-subtitle">Cultivating innovation from within to transform your organization's future.</p>
+        </div>
+    </section>
+
+    <section class="about" style="padding-top: 60px; padding-bottom: 140px;">
+        <div class="section-container" style="display: flex; gap: 80px; flex-wrap: wrap;">
+            <div class="about-content hidden-reveal" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem; font-size: 2.5rem;">The Spirit of Internal Innovation</h2>
+                <p class="about-text"><strong>Intrapreneurship</strong> is the act of engaging in entrepreneurship within an established organization. It empowers employees to take initiative and develop new ideas, products, processes, or business lines using the company’s resources without bearing personal financial risk.</p>
+                
+                <h3 style="color: var(--accent); margin-top: 2rem; margin-bottom: 1rem;">Key Traits of Intrapreneurs</h3>
+                <div class="about-features" style="margin-top: 1rem;">
+                    <div class="feature-item">Think like owners, not just employees</div>
+                    <div class="feature-item">Spot opportunities inside the organization</div>
+                    <div class="feature-item">Push innovation and challenge the status quo</div>
+                    <div class="feature-item">Build and test ideas using company team and budget</div>
+                </div>
+
+                <h3 style="color: var(--accent); margin-top: 2rem; margin-bottom: 1rem;">Intrapreneurship vs Entrepreneurship</h3>
+                <div style="overflow-x: auto; margin: 1.5rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; color: var(--text-main);">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-color);">
+                                <th style="padding: 1rem; text-align: left; background: rgba(0, 113, 227, 0.05);">Category</th>
+                                <th style="padding: 1rem; text-align: left; background: rgba(0, 113, 227, 0.05);">Intrapreneur</th>
+                                <th style="padding: 1rem; text-align: left; background: rgba(0, 113, 227, 0.05);">Entrepreneur</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 1rem;"><strong>Risk</strong></td>
+                                <td style="padding: 1rem;">Company takes financial risk</td>
+                                <td style="padding: 1rem;">Personal financial risk</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 1rem;"><strong>Resources</strong></td>
+                                <td style="padding: 1rem;">Uses company’s money and team</td>
+                                <td style="padding: 1rem;">Raises own funding</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 1rem;"><strong>Ownership</strong></td>
+                                <td style="padding: 1rem;">Company owns the IP/result</td>
+                                <td style="padding: 1rem;">Owns the business</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;"><strong>Goal</strong></td>
+                                <td style="padding: 1rem;">Grow/change inside existing firm</td>
+                                <td style="padding: 1rem;">Build new independent venture</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="color: var(--accent); margin-top: 2rem; margin-bottom: 1rem;">Real-World Examples</h3>
+                <p class="about-text"><strong>Gmail & Google Maps:</strong> Started as "20% time" side projects by Google employees.<br>
+                <strong>Sony PlayStation:</strong> Developed by a Sony engineer who pushed the idea internally against initial resistance.</p>
+
+                <h3 style="color: var(--accent); margin-top: 2rem; margin-bottom: 1rem;">Why Organizations Choose It</h3>
+                <div class="about-features" style="margin-top: 1rem;">
+                    <div class="feature-item">Faster innovation without starting from scratch</div>
+                    <div class="feature-item">Retains top talent seeking high-impact roles</div>
+                    <div class="feature-item">Opens new, untapped revenue streams</div>
+                </div>
+                
+                <button class="cta-button trigger-modal" data-target="#intrapreneur-modal" style="margin-top: 3rem;">View Sector-Specific Ideas</button>
+            </div>
+            <div class="about-image hidden-reveal" style="background-image: url('intrapreneurship_image.png'); flex: 1; min-width: 300px;"></div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="intrapreneur-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">Encouraging Intrapreneurship</h2>
+            <div class="case-study-item">
+                <h3 style="color: var(--accent);">Schools and Colleges</h3>
+                <p><strong>Innovative Learning Models:</strong> Develop new teaching methods or curricula to improve student engagement.</p>
+                <p><strong>EdTech Integration:</strong> Implement technology solutions to enhance learning experiences.</p>
+                <p><strong>Student Entrepreneurship:</strong> Encourage students to develop entrepreneurial skills and ideas.</p>
+                
+                <h3 style="color: var(--accent); margin-top: 1.5rem;">Hospitals</h3>
+                <p><strong>Patient Experience:</strong> Improve patient satisfaction and outcomes through innovative services.</p>
+                <p><strong>Healthcare Technology:</strong> Implement digital health solutions like telemedicine or patient portals.</p>
+                <p><strong>Operational Efficiency:</strong> Streamline processes and reduce costs through innovative management practices.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:harish.anandaraj@pastelremoteai.com">harish.anandaraj@pastelremoteai.com</a></p>
+                <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+916384638463">+91 63846 38463</a> (Phone & WhatsApp)</p>
+            </div>
+            <p class="copyright">&copy; 2026 Pastel Remote AI. Shaping the future of business.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

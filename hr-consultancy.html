@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Consultancy | Pastel Remote AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Pastel Remote AI</a></div>
+        <div class="nav-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh;">
+        <div class="glow-blob"></div>
+        <div class="hero-content">
+            <div class="icon" style="color: var(--accent); margin-bottom: 2rem;">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h1 class="hero-title" style="font-size: 4rem;">HR Consultancy.</h1>
+            <p class="hero-subtitle">Building high-performing, culture-driven teams.</p>
+        </div>
+    </section>
+
+    <section class="about" style="padding-top: 60px; padding-bottom: 140px;">
+        <div class="section-container" style="display: flex; gap: 80px; flex-wrap: wrap;">
+            <div class="about-content hidden-reveal" style="flex: 1; min-width: 300px;">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem; font-size: 2.5rem;">Strategic Talent Management</h2>
+                <p class="about-text">At Pastel Remote AI, we believe your people are your greatest asset. We provide end-to-end HR consultancy to help you manage the entire lifecycle of remote and in-house talent. From dynamic recruitment processes to maintaining a thriving company culture in a modern workspace, our methods ensure your human resources translate to outstanding business success.</p>
+                
+                <div class="about-features" style="margin-top: 2.5rem;">
+                    <div class="feature-item">
+                        <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Global Talent Acquisition & Retention
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Organizational Development & Culture
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Scalable Remote Work Frameworks
+                    </div>
+                </div>
+                
+                <button class="cta-button trigger-modal" data-target="#hr-case-modal" style="margin-top: 3rem;">View Case Studies</button>
+            </div>
+            <div class="about-image hidden-reveal" style="background-image: url('hr_image.png'); flex: 1; min-width: 300px;"></div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="hr-case-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title">HR Case Studies</h2>
+            <div class="case-study-item">
+                <h3>Cross-Industry Talent Acquisition Solutions</h3>
+                <p><strong>The Ecosystem:</strong> Medical Institutions, Travel & Tour Companies, and IT Corporations.</p>
+                <p><strong>The Challenge:</strong> Severe, persistent human shortage problems across wildly diverse industries, directly hindering their capacity to scale and meet daily operational benchmarks.</p>
+                <p><strong>The Solution:</strong> Deployed highly intelligent recruitment funnels and rigorous candidate vetting systems specifically tailored to the unique cultural and technical demands of the medical, travel, and tech sectors.</p>
+                <p><strong>Result:</strong> Successfully bridged the talent gap, completely solving human shortage issues and enabling these massive companies to operate flawlessly at peak capacity.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:harish.anandaraj@pastelremoteai.com">harish.anandaraj@pastelremoteai.com</a></p>
+                <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+916384638463">+91 63846 38463</a> (Phone & WhatsApp)</p>
+            </div>
+            <p class="copyright">&copy; 2026 Pastel Remote AI. Shaping the future of business.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
